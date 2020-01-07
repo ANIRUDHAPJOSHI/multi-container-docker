@@ -8,9 +8,9 @@ script:
 
 after_success:
   - docker build -t aniruddhapjoshi/multi-client ./client
-  - docker build -t aniruddhapjoshi/multi-nginx ./client
-  - docker build -t aniruddhapjoshi/multi-worker ./client
-  - docker build -t aniruddhapjoshi/multi-server ./client
+  - docker build -t aniruddhapjoshi/multi-nginx ./nginx
+  - docker build -t aniruddhapjoshi/multi-worker ./worker
+  - docker build -t aniruddhapjoshi/multi-server ./server
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
